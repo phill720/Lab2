@@ -10,16 +10,17 @@ namespace ConsoleApplication3
     {
         static void Main(string[] args)
         {
-            //   public string answer(string str1);
+            //-----intro-----
             Console.WriteLine("\n-----------------------------------------------");
             Console.WriteLine("Welcome! What is your name? (enter your name)");
             string name = Console.ReadLine();
             string Title = name.ToUpper();
-            Console.Write("HEY " + Title + "!!! Would you Like to play a game?");
-            Console.WriteLine("(enter 'yes' or 'no')");
+            Console.Write("HEY " + Title + "!!! Would you fancy playing a game?");
+            Console.WriteLine(" (enter 'yes' or 'no')");
             string play = Console.ReadLine().ToLower();
             //answer("
             Console.WriteLine();
+            //-----if player chooses to play-----
             if (play == "yes")
             {
                 Console.WriteLine("Nice! You are walking across a field and you encounter a fire-breathing dragon! ");
@@ -33,16 +34,17 @@ namespace ConsoleApplication3
                     string heads = Console.ReadLine();
                     int eyes = int.Parse(heads) * 2;
                     string weapon = "Nothing";
-                    string dragon = "your killer";
+                    string dragon = "Your killer";
+                    //------4 or less heads------
                     if (eyes <= 8)
                     {
                         //------choose a weapon------
                         Console.WriteLine("\nNo one has ever faced a " + heads + "-headed dragon before! Choose your weapon.");
-                        Console.WriteLine("(enter 'slingshot' or 'sword' or 'bow')");
+                        Console.WriteLine("(enter 'tank', 'sword', or 'bow')");
                         weapon = Console.ReadLine().ToLower();
                         Console.WriteLine();
-                        Console.WriteLine("Armed with your " + weapon + ", you approach the dragon.");
-                        Console.WriteLine("You can feel its fiery breath as you get closer.");
+                        Console.WriteLine("Armed with your " + weapon + @", you approach the dragon.
+You can feel its fiery breath as you get closer.");
                         //-----eye color---------
                         Console.WriteLine("It stares at you with its " + eyes + " ____ eyes. (enter 'red' or 'blue')");
                         string color = Console.ReadLine().ToLower();
@@ -50,9 +52,8 @@ namespace ConsoleApplication3
                         //------Red Eyes---------
                         if (color == "red")
                         {
-                            Console.WriteLine("Oh thank goodness! Dragons with " + color + " eyes are friendly");
-                            Console.WriteLine();
-                            //--------names-----------
+                            Console.WriteLine("Oh thank goodness! Dragons with " + color + " eyes are friendly\n");
+                            //--------happy ending-----------
                             Console.WriteLine("You pet it and become friends. You name the dragon ____. (enter name)");
                             dragon = Console.ReadLine();
                             Console.WriteLine();
@@ -64,14 +65,18 @@ namespace ConsoleApplication3
                             Console.WriteLine("Welp. Dragons with " + color + " eyes are very deadly but " + weapon + "s are their weakness.");
                             Console.WriteLine("You have defeated the beast but lost an arm and leg in the fight.");
                         }
+                        //--------success credits--------
                         Console.WriteLine();
                         Console.WriteLine();
                         Console.WriteLine("---------Congratulations champion!------------");
                     }
+                    //-------more than 4 heads---------
                     else
                     {
+                        Console.WriteLine();
                         Console.WriteLine("Well... " + heads + @" heads is far too many for you to handle.
 You definitely just died without a fight. You couldn't handle all " + eyes + " eyes. Rest In Peace " + Title);
+                        //-------death credits-------
                         Console.WriteLine();
                         Console.WriteLine();
                         Console.WriteLine("-----------------That sucks!-----------------");
@@ -79,17 +84,17 @@ You definitely just died without a fight. You couldn't handle all " + eyes + " e
                     //--------ending/credits-----------
                     Console.WriteLine("Created By: Christian Phillips");
                     Console.WriteLine("Starring " + Title + " as " + Title);
-                    Console.WriteLine("Also starring " + dragon + " as '" + dragon + ", The Dragon'");
+                    Console.WriteLine("Also starring " + dragon + " as '" + dragon + ", The " + heads + "-Headed Dragon'");
                     Console.WriteLine(weapon.ToUpper() + " as your primary weapon");
                     Console.WriteLine("Blah Blahson as The Narrator");
                     Console.WriteLine("Quick shoutout to ExperienceIT for sponsoring this");
                     Console.WriteLine("Thanks for playing!");
                     Console.WriteLine("---------------------------------------------\n");
-
                 }
                 //-------if they ran away--------
                 else if (coward == "run away")
                 { Console.WriteLine("Coward!"); }
+                //-----answer not recognized-----
                 else
                 { Console.WriteLine("Your answer '" + coward + "' is not an option. Start over!"); }
             }
@@ -99,6 +104,11 @@ You definitely just died without a fight. You couldn't handle all " + eyes + " e
                 Console.WriteLine("Fine. Then go home.");
                 Console.WriteLine();
             }
+        }
+
+        static string myWrite(string message)
+        {
+            return "hi " + message;
         }
     }
 }
